@@ -1,0 +1,38 @@
+{
+	"name": "hjira",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"@tailwindcss/typography": "^0.5.13",
+		"autoprefixer": "^10.4.19",
+		"postcss": "^8.4.38",
+		"svelte": "^4.2.7",
+		"tailwindcss": "^3.4.4",
+		"vite": "^5.0.3"
+	},
+	"type": "module",
+	"dependencies": {
+		"@fortawesome/fontawesome-svg-core": "^6.6.0",
+		"@fortawesome/free-solid-svg-icons": "^6.6.0",
+		"@fortawesome/svelte-fontawesome": "^0.2.2",
+		"chart.js": "^4.4.4",
+		"datatables.net": "^2.1.5",
+		"datatables.net-dt": "^2.1.5",
+		"firebase": "^10.13.0",
+		"flatpickr": "^4.6.13",
+		"jquery": "^3.7.1",
+		"lucide": "^0.433.0",
+		"lucide-svelte": "^0.438.0",
+		"rollup": "^4.21.2",
+		"svelte-chartjs": "^3.1.5",
+		"svelte-flatpickr": "^3.3.4"
+	}
+}
