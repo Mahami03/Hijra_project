@@ -1,23 +1,29 @@
-# Hijra Project
+# Proje Adı
 
-- [x] Giriş sayfasında Topbar ve Navbar gözükmeyecek.
-- [x] Giriş yaparken mail inputu sadece mail alsın (input tipi mail olacak).
-- [x] Topbarda kullanıcı profilinde mail yerine isim gözüksün.
-- [x] Staff giriş yapınca Sidebar kaybolsun. Sadece Topbar olacak.
-- [x] Dashboard yapılacak.
-- [x] Chart yapılacak.
-- [x] Dashboardda yukarıdaki ikonları değiştir
-- [x] Dashboardda Services'deki chrome ikonlarını değiştir
-- [x] Services, Branches, Troubles, Login bölümlerini aynı stil ve buton özellikleriyle düzenle
-- [x] Ekleme kısmı ve butonlar aynı özelliklerde olsun (Örnek: "Add Branch" butonu mor)
-- [x] Canlıya Al
-- [x] Sorunlar sayfasında güne göre filtreleme olacak. (DataTables ile yapılabilir).
-- [x] Admin sayfasında kullanıcı yönetim sayfası eklenecek.
-- [ ] Her yere Loading ekle
-- [ ] Giriş yaparken 'SigningOut' diyor. Çıkış yapıp giriş yapıyor. Bunun olmaması lazım.
-- [ ] 0.00% change in downtime compared to last month. Burada -li karşılaştırma da yapsın.
-- [ ] Troublesde boş bir trouble eklediğinde ekliyor bazı inputların zorunlu olması lazım.
-- [ ] muhammed@hijra-bank.com olarak kayıt yapılsın mı?
-- [ ] Troublesde Delete ve Edit olsun.
-- [ ] Cutover hazırlığı
-- [ ] Gerçek veri girişi
+Bu proje Svelte + Firebase tabanlı bir hizmet yönetim uygulamasıdır.
+
+## Gereksinimler
+
+- **Node.js** (v14 ve üzeri)  
+- **npm** (v6 ve üzeri)  
+- **Git**
+
+## Kurulum ve Çalıştırma
+
+1. Depoyu klonlayın  
+   ```bash
+   git clone https://github.com/kullanici/proje-adi.git
+Proje dizinine girin
+
+
+2. Proje dizinine girin  
+   ```bash
+   cd _Kendi proje-adınız_
+
+3. Gerekli paketleri yükleyin
+    ```bash
+    npm install
+
+4. Geliştirme sunucusunu başlatın
+    ```bash
+    npm run dev
