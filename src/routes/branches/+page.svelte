@@ -11,6 +11,9 @@
   let editingBranchId = null;
   let showModal = false;
 
+  let branchToDelete = null;
+  let showDeleteModal = false;
+
   onMount(() => {
     onAuthStateChanged(auth, (currentUser) => {
       user = currentUser;
@@ -63,6 +66,20 @@
     await deleteDoc(doc(db, "branches", id));
     branches = branches.filter(branch => branch.id !== id);
   }
+  function promptDelete(id) {
+    branchToDelete = id;
+    showDeleteModal = true;
+  }
+
+  function cancelDelete() {
+    branchToDelete = null;
+    showDeleteModal = false;
+  }
+
+  async function confirmDelete() {
+    await deleteBranch(branchToDelete);
+    cancelDelete();
+  }
 </script>
 
 <main class="p-6 bg-gray-100 min-h-screen">
@@ -88,6 +105,25 @@
       </div>
     {/if}
 
+    {#if showDeleteModal}
+      <div class="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
+        <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm mx-auto w-1/3">
+          <h2 class="text-xl font-bold mb-4">Are you sure?</h2>
+          <p class="mb-6">Are you sure you want to delete this branch? This action is irreversible.</p>
+          <div class="flex justify-end">
+            <button on:click={cancelDelete}
+                    class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg mr-2">
+              Cancel
+            </button>
+            <button on:click={confirmDelete}
+                    class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg">
+              Yes
+            </button>
+          </div>
+        </div>
+      </div>
+    {/if}
+
     <div class="overflow-x-auto shadow-lg rounded-lg">
       <table class="min-w-full bg-white rounded-lg">
         <thead>
@@ -102,7 +138,7 @@
               <td class="py-3 px-5">{branch.branchName}</td>
               <td class="py-3 px-5 text-center">
                 <button on:click={() => editBranch(branch)} class="bg-yellow-500 hover:bg-yellow-600 text-white py-1 px-3 rounded-lg font-medium mr-2">Edit</button>
-                <button on:click={() => deleteBranch(branch.id)} class="bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded-lg font-medium">Delete</button>
+                <button on:click={() =>  promptDelete(branch.id)} class="bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded-lg font-medium">Delete</button>
               </td>
             </tr>
           {/each}
